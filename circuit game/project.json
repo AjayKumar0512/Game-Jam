@@ -34,14 +34,11 @@
     "src/controllers/GameManager.js",
     "src/controllers/LevelManager.js",
     "src/controllers/CocosSettings.js",
-    "src/controllers/SpritePool.js",
     "src/controllers/HintManager.js",
     "src/entities/GamePlayScene.js",
     "src/entities/Mode.js",
     "src/entities/GamePlayLayer.js",
     "src/entities/ModeSelectionPage.js",
-    "src/entities/TopBar.js",
-    "src/entities/ScrollingBg.js",
-    "src/entities/CategorySelector.js"
+    "src/entities/TopBar.js"
   ]
 }

@@ -27,7 +27,6 @@ class GameManager {
     this.allLevelStars = 0;
     this.maxLevelStars = 0;
     window.gameManager = this;
-    this.spritePool = new SpritePool();
     this.resetDesignResolution();
     this.createLevelManagerObject();
     this.start();
