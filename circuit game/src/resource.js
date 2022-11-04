@@ -42,6 +42,11 @@
       modebg: "res/retina/ipad/modebg.png",
       modebg_small: "res/retina/small-device/modebg.png",
       bg: "res/retina/ipad/BUILD1.png",
+      bulb: "res/retina/game_play/bulb.png",
+      switch: "res/retina/game_play/switch.png",
+      amplifier: "res/retina/game_play/amplifier.png",
+      battery: "res/retina/game_play/battery.png",
+      start: "res/retina/game_play/start.png",
     },
   };
 
