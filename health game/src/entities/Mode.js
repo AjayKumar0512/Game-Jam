@@ -71,11 +71,11 @@ var Mode = cc.Sprite.extend({
     this.heading.addChild(this.label);
     //adding sub text based on mode
     switch (this.data) {
-      case "Build":
-        str = "Build It!";
+      case GameConstants.LEVELNAME.EXPLORATION:
+        str = "Explore elements";
         break;
-      case "Garrage":
-        str = "Test It!";
+      case GameConstants.LEVELNAME.COMPETE:
+        str = "Solve the levels";
         break;
     }
     fontSize = 25;
@@ -92,7 +92,7 @@ var Mode = cc.Sprite.extend({
   },
   addThumbnail() {
     var path = "";
-    if (this.data == GameConstants.LEVELNAME.BUILD)
+    if (this.data == GameConstants.LEVELNAME.EXPLORE)
       path = res.freeplay_thumbnail;
     else
       path = res.followplay_thumbnail;
