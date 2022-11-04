@@ -79,13 +79,20 @@ var GamePlayLayer = cc.Layer.extend({
       var box = self.elements[i].getBoundingBox();
       if (cc.rectContainsPoint(box, Location)) {
         self.selectedCategory = i;
+        self.elements[i].setLocalZOrder(1);
         return true;
       }
 
     }
   },
   startClicked() {
-    console.log("start clicked");
+    var line = new cc.DrawNode.create();
+    this.addChild(line);
+    var pos1 = this.elements[0].getPosition();
+    var pos2 = this.elements[1].getPosition();
+
+    line.drawSegment(pos1, pos2, 5, cc.color(63, 28, 29));
+
   },
   onTouchMoved(touch, event) {
     var self = event.getCurrentTarget();
