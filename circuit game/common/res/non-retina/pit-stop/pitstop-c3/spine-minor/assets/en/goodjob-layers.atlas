@@ -1,0 +1,48 @@
+
+goodjob-layers.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+POPUP
+  rotate: false
+  xy: 2, 82
+  size: 246, 136
+  orig: 246, 136
+  offset: 0, 0
+  index: -1
+RIBBEN
+  rotate: false
+  xy: 304, 23
+  size: 59, 73
+  orig: 59, 73
+  offset: 0, 0
+  index: -1
+TEXT
+  rotate: false
+  xy: 2, 2
+  size: 300, 78
+  orig: 300, 78
+  offset: 0, 0
+  index: -1
+TRUMPET1
+  rotate: false
+  xy: 250, 98
+  size: 147, 120
+  orig: 147, 120
+  offset: 0, 0
+  index: -1
+TRUMPET2
+  rotate: false
+  xy: 399, 140
+  size: 57, 78
+  orig: 57, 78
+  offset: 0, 0
+  index: -1
+TRUMPET3
+  rotate: true
+  xy: 458, 134
+  size: 84, 48
+  orig: 84, 48
+  offset: 0, 0
+  index: -1
