@@ -36,17 +36,20 @@
           mode_selection_png: "res/retina/mode_selection/mode_selection.png",
         },
       ],
+      oolzoo_json: "res/retina/SpineAnimation/oolzoo/oolzoo.json",
+      oolzoo_atlas: "res/retina/SpineAnimation/oolzoo/oolzoo.atlas",
+      oolzoo_png: "res/retina/SpineAnimation/oolzoo/oolzoo.png",
       //top bar
       ui_bar: "res/retina/top_bar/ui_bar.png",
       //mode selection
       modebg: "res/retina/ipad/modebg.png",
       modebg_small: "res/retina/small-device/modebg.png",
       bg: "res/retina/ipad/BUILD1.png",
-      bulb: "res/retina/game_play/bulb.png",
-      switch: "res/retina/game_play/switch.png",
-      amplifier: "res/retina/game_play/amplifier.png",
-      battery: "res/retina/game_play/battery.png",
-      start: "res/retina/game_play/start.png",
+      angry: "res/retina/game_play/bulb.png",
+      sad: "res/retina/game_play/switch.png",
+      cry: "res/retina/game_play/amplifier.png",
+      happy: "res/retina/game_play/battery.png",
+      drag: "res/retina/game_play/start.png",
     },
   };
 

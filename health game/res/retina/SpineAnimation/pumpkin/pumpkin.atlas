@@ -1,0 +1,62 @@
+
+pumpkin.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+pumpkin/body
+  rotate: false
+  xy: 2, 73
+  size: 206, 166
+  orig: 206, 166
+  offset: 0, 0
+  index: -1
+pumpkin/eyebase
+  rotate: false
+  xy: 210, 133
+  size: 51, 50
+  orig: 53, 52
+  offset: 1, 1
+  index: -1
+pumpkin/eyelid
+  rotate: false
+  xy: 265, 208
+  size: 52, 31
+  orig: 54, 33
+  offset: 1, 1
+  index: -1
+pumpkin/eyelid_close
+  rotate: false
+  xy: 210, 185
+  size: 53, 54
+  orig: 53, 54
+  offset: 0, 0
+  index: -1
+pumpkin/handle
+  rotate: false
+  xy: 210, 87
+  size: 34, 44
+  orig: 34, 44
+  offset: 0, 0
+  index: -1
+pumpkin/mouth
+  rotate: true
+  xy: 184, 42
+  size: 29, 16
+  orig: 31, 18
+  offset: 1, 1
+  index: -1
+pumpkin/pupil
+  rotate: false
+  xy: 319, 213
+  size: 30, 26
+  orig: 32, 28
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: false
+  xy: 2, 2
+  size: 180, 69
+  orig: 180, 69
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,55 @@
+
+cup_egg.png
+size: 1240,248
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cup/cup
+  rotate: false
+  xy: 2, 2
+  size: 341, 242
+  orig: 343, 244
+  offset: 1, 1
+  index: -1
+cup/cup_broken_part_1
+  rotate: false
+  xy: 345, 2
+  size: 236, 242
+  orig: 238, 244
+  offset: 1, 1
+  index: -1
+cup/cup_broken_part_2
+  rotate: false
+  xy: 583, 2
+  size: 169, 242
+  orig: 171, 244
+  offset: 1, 1
+  index: -1
+egg/egg_body
+  rotate: false
+  xy: 754, 29
+  size: 164, 215
+  orig: 166, 217
+  offset: 1, 1
+  index: -1
+egg/egg_broken_body_l
+  rotate: false
+  xy: 920, 33
+  size: 138, 211
+  orig: 140, 213
+  offset: 1, 1
+  index: -1
+egg/egg_broken_body_r
+  rotate: false
+  xy: 1060, 48
+  size: 104, 196
+  orig: 106, 198
+  offset: 1, 1
+  index: -1
+shadow
+  rotate: true
+  xy: 1166, 64
+  size: 180, 69
+  orig: 180, 69
+  offset: 0, 0
+  index: -1

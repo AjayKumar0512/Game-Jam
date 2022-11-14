@@ -20,7 +20,12 @@ const GameConstants = {
     MODE: 2,
     BACKGROUND: 1,
   },
-
+  FEELINGS: {
+    ANGRY: 0,
+    SAD: 1,
+    CRYING: 2,
+    HAPPY: 3,
+  },
   LEVELNAME: {
     NONE: "none",
     EXPLORATION: "Exploration",

@@ -1,0 +1,34 @@
+
+skeleton.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bubble/bubble dispenser body
+  rotate: false
+  xy: 2, 400
+  size: 680, 606
+  orig: 680, 606
+  offset: 0, 0
+  index: -1
+bubble/bubble dispenser nozzle
+  rotate: false
+  xy: 684, 756
+  size: 282, 250
+  orig: 282, 250
+  offset: 0, 0
+  index: -1
+bubble/soap_bubble
+  rotate: false
+  xy: 2, 2
+  size: 399, 396
+  orig: 399, 396
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 403, 329
+  size: 180, 69
+  orig: 180, 69
+  offset: 0, 0
+  index: -1

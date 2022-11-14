@@ -1,0 +1,174 @@
+
+eddie.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+drums/drum_stick2
+  rotate: false
+  xy: 709, 273
+  size: 98, 70
+  orig: 127, 113
+  offset: 20, 43
+  index: -1
+eddie/body
+  rotate: false
+  xy: 1, 10
+  size: 333, 501
+  orig: 333, 501
+  offset: 0, 0
+  index: -1
+eddie/eye base_left
+  rotate: false
+  xy: 809, 248
+  size: 93, 95
+  orig: 93, 95
+  offset: 0, 0
+  index: -1
+eddie/eye base_right
+  rotate: true
+  xy: 904, 219
+  size: 83, 85
+  orig: 83, 85
+  offset: 0, 0
+  index: -1
+eddie/eye brow
+  rotate: true
+  xy: 1009, 383
+  size: 41, 14
+  orig: 41, 14
+  offset: 0, 0
+  index: -1
+eddie/eyes_closed
+  rotate: true
+  xy: 662, 199
+  size: 84, 27
+  orig: 84, 27
+  offset: 0, 0
+  index: -1
+eddie/eyes_closed2
+  rotate: false
+  xy: 773, 202
+  size: 79, 44
+  orig: 79, 44
+  offset: 0, 0
+  index: -1
+eddie/hair
+  rotate: true
+  xy: 691, 198
+  size: 73, 80
+  orig: 73, 80
+  offset: 0, 0
+  index: -1
+eddie/leg
+  rotate: false
+  xy: 336, 44
+  size: 101, 161
+  orig: 101, 161
+  offset: 0, 0
+  index: -1
+eddie/lower hand
+  rotate: true
+  xy: 439, 36
+  size: 169, 70
+  orig: 169, 70
+  offset: 0, 0
+  index: -1
+eddie/mouth _hungry
+  rotate: false
+  xy: 872, 396
+  size: 135, 28
+  orig: 135, 28
+  offset: 0, 0
+  index: -1
+eddie/mouth _open
+  rotate: false
+  xy: 706, 431
+  size: 168, 80
+  orig: 168, 80
+  offset: 0, 0
+  index: -1
+eddie/mouth _open1
+  rotate: false
+  xy: 876, 426
+  size: 141, 85
+  orig: 141, 85
+  offset: 0, 0
+  index: -1
+eddie/mouth _open2
+  rotate: false
+  xy: 516, 214
+  size: 144, 69
+  orig: 144, 69
+  offset: 0, 0
+  index: -1
+eddie/mouth _open4
+  rotate: false
+  xy: 542, 405
+  size: 162, 106
+  orig: 162, 106
+  offset: 0, 0
+  index: -1
+eddie/mouth _sad
+  rotate: false
+  xy: 709, 345
+  size: 159, 37
+  orig: 159, 37
+  offset: 0, 0
+  index: -1
+eddie/mouth _smile
+  rotate: false
+  xy: 709, 384
+  size: 161, 45
+  orig: 161, 45
+  offset: 0, 0
+  index: -1
+eddie/mouth_eating_cheek
+  rotate: false
+  xy: 516, 154
+  size: 70, 58
+  orig: 70, 58
+  offset: 0, 0
+  index: -1
+eddie/pupil
+  rotate: false
+  xy: 336, 1
+  size: 41, 41
+  orig: 41, 41
+  offset: 0, 0
+  index: -1
+eddie/upper hand
+  rotate: false
+  xy: 542, 333
+  size: 165, 70
+  orig: 165, 70
+  offset: 0, 0
+  index: -1
+eddie_shadow
+  rotate: false
+  xy: 516, 285
+  size: 172, 46
+  orig: 172, 46
+  offset: 0, 0
+  index: -1
+space/helmet
+  rotate: false
+  xy: 336, 207
+  size: 178, 133
+  orig: 178, 133
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 904, 304
+  size: 93, 90
+  orig: 93, 90
+  offset: 0, 0
+  index: -1
+turban
+  rotate: false
+  xy: 336, 342
+  size: 204, 169
+  orig: 204, 169
+  offset: 0, 0
+  index: -1

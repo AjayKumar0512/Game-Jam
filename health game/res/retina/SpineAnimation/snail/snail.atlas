@@ -1,0 +1,132 @@
+
+snail.png
+size: 700,324
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+snail/antenna
+  rotate: false
+  xy: 315, 3
+  size: 79, 99
+  orig: 79, 99
+  offset: 0, 0
+  index: -1
+snail/back
+  rotate: true
+  xy: 315, 104
+  size: 217, 212
+  orig: 217, 212
+  offset: 0, 0
+  index: -1
+snail/body
+  rotate: false
+  xy: 2, 6
+  size: 311, 315
+  orig: 311, 315
+  offset: 0, 0
+  index: -1
+snail/eye base
+  rotate: false
+  xy: 452, 32
+  size: 70, 70
+  orig: 70, 70
+  offset: 0, 0
+  index: -1
+snail/mouth/mouth_AEI
+  rotate: true
+  xy: 524, 32
+  size: 70, 46
+  orig: 72, 48
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_BMP
+  rotate: false
+  xy: 469, 2
+  size: 117, 28
+  orig: 119, 30
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_CDGKNSTXYZ
+  rotate: false
+  xy: 601, 106
+  size: 70, 35
+  orig: 72, 37
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_ChJSh
+  rotate: false
+  xy: 529, 104
+  size: 70, 37
+  orig: 72, 39
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_Ee
+  rotate: true
+  xy: 664, 178
+  size: 61, 31
+  orig: 63, 33
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_FV
+  rotate: true
+  xy: 425, 30
+  size: 72, 25
+  orig: 74, 27
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_L
+  rotate: true
+  xy: 572, 32
+  size: 70, 46
+  orig: 72, 48
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_O
+  rotate: true
+  xy: 664, 282
+  size: 39, 34
+  orig: 41, 36
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_QWOo
+  rotate: true
+  xy: 664, 241
+  size: 39, 34
+  orig: 41, 36
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_R
+  rotate: true
+  xy: 396, 24
+  size: 78, 27
+  orig: 80, 29
+  offset: 1, 1
+  index: -1
+snail/mouth/mouth_Th
+  rotate: false
+  xy: 620, 58
+  size: 70, 46
+  orig: 72, 48
+  offset: 1, 1
+  index: -1
+snail/pupil
+  rotate: false
+  xy: 620, 14
+  size: 42, 42
+  orig: 42, 42
+  offset: 0, 0
+  index: -1
+snail/pupil close
+  rotate: false
+  xy: 425, 5
+  size: 42, 23
+  orig: 42, 23
+  offset: 0, 0
+  index: -1
+space/helmet
+  rotate: true
+  xy: 529, 143
+  size: 178, 133
+  orig: 178, 133
+  offset: 0, 0
+  index: -1

@@ -22,7 +22,7 @@ var ModeSelectionPage = cc.Layer.extend({
   //adds required components to the mode selection page
   addComponents() {
     this.addBackground();
-    this.runAction(cc.sequence(cc.delayTime(1),
+    this.runAction(cc.sequence(cc.delayTime(0.5),
       cc.callFunc(() => {
         this.addTint();
         this.addOolzooPopUP();
@@ -74,10 +74,11 @@ var ModeSelectionPage = cc.Layer.extend({
     this.addChild(this.background, GameConstants.MODESELECTIONPAGE.BACKGROUND);
   },
   addOolzooPopUP() {
+
     this.popup = new cc.Sprite(res.title);
     this.addChild(this.popup, 3);
     this.popup.setScale(1.5, 3);
-    this.popup.setPosition(-this.m_visibleSize.width / 2 - this.popup.width * 2, -this.m_visibleSize.height / 2 - this.popup.height * 2);
+    this.popup.setPosition(-this.m_visibleSize.width / 2 - this.popup.width * 2, this.m_visibleSize.height / 2 + this.popup.height * 2);
     this.popup.runAction(cc.sequence(cc.moveTo(0.3, cc.p(-this.m_visibleSize.width / 2 + this.popup.width * 1.5, this.popup.height * 2.5)),
       cc.callFunc(() => {
         this.addText();
@@ -85,7 +86,16 @@ var ModeSelectionPage = cc.Layer.extend({
 
       })
     ));
+    this.oolzoo = new SpineUtils(res.oolzoo_json, res.oolzoo_atlas, 1);
+    this.oolzoo.setPosition(-this.m_visibleSize.width / 2 - this.popup.width * 2, this.m_visibleSize.height / 2 + this.popup.height * 2);
+    this.addChild(this.oolzoo, 3);
+    this.oolzoo.runAction(cc.sequence(cc.moveTo(0.3, cc.p(-this.m_visibleSize.width / 2 + this.popup.width * 0.5, this.popup.height * 2.5)),
+      cc.callFunc(() => {
+        this.oolzoo.setAnimation(0, "tada", false);
 
+
+      })
+    ));
   },
 
   addText() {

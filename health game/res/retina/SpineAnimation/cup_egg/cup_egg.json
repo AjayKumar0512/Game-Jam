@@ -1,0 +1,471 @@
+{
+"skeleton": { "hash": "yQK5zDOdYU3I0ZE6E0HqI4AeMVs", "spine": "3.7.94", "width": 0, "height": 0, "images": "./images/", "audio": "D:/StudyPad/Pre K/Pre K Hide and Seek/Spine/Spine" },
+"bones": [
+	{ "name": "root" },
+	{ "name": "cup", "parent": "root", "length": 165.57, "rotation": 90, "y": -105.73 },
+	{ "name": "cup_broken_r", "parent": "cup", "rotation": 90, "x": 39.74, "y": 67.32 },
+	{ "name": "cup_broken_l", "parent": "cup", "rotation": -90, "x": 39.74, "y": -70.87 },
+	{ "name": "cup_body", "parent": "cup", "rotation": -90, "x": 107.9 },
+	{ "name": "cup_broken_body_l", "parent": "cup_broken_l", "x": -6.56, "y": 70.24 },
+	{ "name": "cup_broken_body_r", "parent": "cup_broken_r", "rotation": 180, "x": -5.42, "y": -70.24 },
+	{
+		"name": "shadow",
+		"parent": "root",
+		"length": 176.81,
+		"x": -132.71,
+		"y": -60.41,
+		"scaleX": 1.798,
+		"scaleY": 1.798
+	},
+	{ "name": "egg", "parent": "root", "y": -105.73 },
+	{ "name": "egg_broken_body_l", "parent": "egg", "length": 196.5, "rotation": 78.94, "x": -0.4, "y": 1.7 },
+	{ "name": "egg_broken_body_r", "parent": "egg", "length": 185.41, "rotation": 78.95, "x": -51.15, "y": 19.1 }
+],
+"slots": [
+	{ "name": "shadow", "bone": "shadow" },
+	{ "name": "cup_broken_l", "bone": "cup_broken_body_l" },
+	{ "name": "cup_broken_r", "bone": "cup_broken_body_r" },
+	{ "name": "cup_body", "bone": "cup_body" },
+	{ "name": "egg_body", "bone": "egg" },
+	{ "name": "egg_broken_body_r", "bone": "egg_broken_body_r" },
+	{ "name": "egg_broken_body_l", "bone": "egg_broken_body_l" }
+],
+"skins": {
+	"default": {
+		"cup_body": {
+			"cup/cup": { "x": 35.72, "y": 12.38, "width": 343, "height": 244 }
+		},
+		"cup_broken_l": {
+			"cup/cup_broken_part_1": { "x": 23.91, "y": 10.3, "width": 238, "height": 244 }
+		},
+		"cup_broken_r": {
+			"cup/cup_broken_part_2": { "x": 10.12, "y": 10.3, "width": 171, "height": 244 }
+		},
+		"egg_body": {
+			"egg/egg_body": { "x": 0.74, "y": 103.7, "width": 166, "height": 217 }
+		},
+		"egg_broken_body_l": {
+			"egg/egg_broken_body_l": { "x": 101.24, "y": 3.34, "rotation": -78.94, "width": 140, "height": 213 }
+		},
+		"egg_broken_body_r": {
+			"egg/egg_broken_body_r": { "x": 96.16, "y": -4.04, "rotation": -78.95, "width": 106, "height": 198 }
+		},
+		"shadow": {
+			"shadow": { "x": 87.04, "rotation": 0.11, "width": 180, "height": 69 }
+		}
+	}
+},
+"animations": {
+	"cup_break": {
+		"slots": {
+			"cup_broken_l": {
+				"color": [
+					{ "time": 0.8333, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cup/cup_broken_part_1" }
+				]
+			},
+			"cup_broken_r": {
+				"color": [
+					{ "time": 0.8333, "color": "ffffffff" },
+					{ "time": 1, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cup/cup_broken_part_2" }
+				]
+			},
+			"shadow": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		},
+		"bones": {
+			"cup_broken_body_l": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.104, 0.79, 0.75, 1 ]
+					},
+					{
+						"time": 0.0667,
+						"angle": -44.13,
+						"curve": [ 0.368, 0.14, 0.75, 1 ]
+					},
+					{
+						"time": 0.2333,
+						"angle": -101.03,
+						"curve": [ 0.09, 0.38, 0.381, 1 ]
+					},
+					{ "time": 0.5667, "angle": -160.94 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.104, 0.79, 0.75, 1 ]
+					},
+					{
+						"time": 0.0667,
+						"x": 66.24,
+						"y": 96.96,
+						"curve": [ 0.368, 0.14, 0.75, 1 ]
+					},
+					{
+						"time": 0.2333,
+						"x": 238.46,
+						"y": 37.03,
+						"curve": [ 0.09, 0.38, 0.381, 1 ]
+					},
+					{ "time": 0.5667, "x": 402.24, "y": -62.4 },
+					{ "time": 1, "x": 402.24, "y": -61.44 }
+				]
+			},
+			"cup_broken_body_r": {
+				"rotate": [
+					{
+						"time": 0,
+						"angle": 0,
+						"curve": [ 0.104, 0.79, 0.75, 1 ]
+					},
+					{
+						"time": 0.0667,
+						"angle": 90.16,
+						"curve": [ 0.25, 0, 0.837, 0.34 ]
+					},
+					{
+						"time": 0.2333,
+						"angle": 131.62,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4,
+						"angle": 145.69,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.5667, "angle": 114.57 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.104, 0.79, 0.75, 1 ]
+					},
+					{
+						"time": 0.0667,
+						"x": 61.44,
+						"y": -92.16,
+						"curve": [ 0.25, 0, 0.837, 0.34 ]
+					},
+					{
+						"time": 0.2333,
+						"x": 184.32,
+						"y": 171.84,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4,
+						"x": 242.88,
+						"y": 143.04,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.5667, "x": 200.64, "y": 169.92 }
+				]
+			}
+		}
+	},
+	"cup_flip": {
+		"slots": {
+			"cup_body": {
+				"color": [
+					{ "time": 0.3, "color": "ffffffff" },
+					{ "time": 0.5333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "cup/cup" }
+				]
+			},
+			"shadow": {
+				"color": [
+					{
+						"time": 0,
+						"color": "ffffffff",
+						"curve": [ 0.198, 0.9, 0.75, 1 ]
+					},
+					{ "time": 0.1667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		},
+		"bones": {
+			"cup": {
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.166, 0.78, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "x": 198.47, "y": 0 }
+				]
+			},
+			"cup_body": {
+				"rotate": [
+					{ "time": 0, "angle": 0 },
+					{ "time": 0.1, "angle": -90 },
+					{ "time": 0.2333, "angle": 180 },
+					{ "time": 0.4333, "angle": 90 },
+					{ "time": 0.7, "angle": 0 }
+				],
+				"translate": [
+					{
+						"time": 0,
+						"x": 0,
+						"y": 0,
+						"curve": [ 0.166, 0.78, 0.75, 1 ]
+					},
+					{ "time": 0.8333, "x": 390.23, "y": 0 }
+				]
+			}
+		}
+	},
+	"cup_idle": {
+		"slots": {
+			"cup_body": {
+				"attachment": [
+					{ "time": 0, "name": "cup/cup" }
+				]
+			},
+			"shadow": {
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		}
+	},
+	"egg_break": {
+		"slots": {
+			"egg_body": {
+				"attachment": [
+					{ "time": 0, "name": "egg/egg_body" },
+					{ "time": 0.0667, "name": null }
+				]
+			},
+			"egg_broken_body_l": {
+				"color": [
+					{ "time": 0.7, "color": "ffffffff" },
+					{ "time": 0.8667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.0667, "name": "egg/egg_broken_body_l" }
+				]
+			},
+			"egg_broken_body_r": {
+				"color": [
+					{ "time": 0.7, "color": "ffffffff" },
+					{ "time": 0.8667, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0.0667, "name": "egg/egg_broken_body_r" }
+				]
+			},
+			"shadow": {
+				"color": [
+					{ "time": 0.1, "color": "ffffffff" },
+					{ "time": 0.2, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		},
+		"bones": {
+			"shadow": {
+				"translate": [
+					{ "time": 0, "x": 69.6, "y": -30 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.556, "y": 0.556 }
+				]
+			},
+			"egg_broken_body_r": {
+				"rotate": [
+					{
+						"time": 0.1,
+						"angle": 17.47,
+						"curve": [ 0.18, 0.36, 0.726, 0.87 ]
+					},
+					{
+						"time": 0.2333,
+						"angle": 79.27,
+						"curve": [ 0.152, 0.77, 0.75, 1 ]
+					},
+					{
+						"time": 0.3667,
+						"angle": 112.84,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.5667,
+						"angle": 95.62,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.7, "angle": 99.01 }
+				],
+				"translate": [
+					{ "time": 0.0667, "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 0.1,
+						"x": 8.7,
+						"y": 6.53,
+						"curve": [ 0.18, 0.36, 0.726, 0.87 ]
+					},
+					{
+						"time": 0.2333,
+						"x": -4.35,
+						"y": 0,
+						"curve": [ 0.152, 0.77, 0.75, 1 ]
+					},
+					{
+						"time": 0.3667,
+						"x": -16.68,
+						"y": 42.05,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.5667,
+						"x": -10.15,
+						"y": 16.68,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.7, "x": -11.6, "y": 21.75 }
+				]
+			},
+			"egg_broken_body_l": {
+				"rotate": [
+					{
+						"time": 0.1,
+						"angle": -7.82,
+						"curve": [ 0.156, 0.79, 0.75, 1 ]
+					},
+					{
+						"time": 0.2667,
+						"angle": -97.84,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4,
+						"angle": -76.47,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6, "angle": -100.26 }
+				],
+				"translate": [
+					{ "time": 0.0667, "x": 0, "y": 0, "curve": "stepped" },
+					{
+						"time": 0.1,
+						"x": 5.8,
+						"y": 0,
+						"curve": [ 0.201, 0.65, 0.726, 0.93 ]
+					},
+					{
+						"time": 0.2667,
+						"x": 39.88,
+						"y": 91.35,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{
+						"time": 0.4,
+						"x": 25.38,
+						"y": 63.07,
+						"curve": [ 0.25, 0, 0.75, 1 ]
+					},
+					{ "time": 0.6, "x": 42.77, "y": 95.7 }
+				]
+			},
+			"egg": {
+				"translate": [
+					{ "time": 0, "x": -0.78, "y": 10.58 }
+				]
+			}
+		}
+	},
+	"egg_flip": {
+		"slots": {
+			"egg_body": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "egg/egg_body" }
+				]
+			},
+			"shadow": {
+				"color": [
+					{ "time": 0, "color": "ffffffff" },
+					{ "time": 0.3333, "color": "ffffff00" }
+				],
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		},
+		"bones": {
+			"shadow": {
+				"translate": [
+					{ "time": 0, "x": 69.6, "y": -30 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.556, "y": 0.556 }
+				]
+			},
+			"egg": {
+				"translate": [
+					{ "time": 0, "x": -0.78, "y": 10.58 }
+				]
+			}
+		}
+	},
+	"egg_idle": {
+		"slots": {
+			"egg_body": {
+				"attachment": [
+					{ "time": 0, "name": "egg/egg_body" }
+				]
+			},
+			"shadow": {
+				"attachment": [
+					{ "time": 0, "name": "shadow" }
+				]
+			}
+		},
+		"bones": {
+			"shadow": {
+				"translate": [
+					{ "time": 0, "x": 69.6, "y": -30 }
+				],
+				"scale": [
+					{ "time": 0, "x": 0.556, "y": 0.556 }
+				]
+			},
+			"egg": {
+				"translate": [
+					{ "time": 0, "x": -0.78, "y": 10.58 }
+				]
+			}
+		}
+	}
+}
+}

@@ -33,8 +33,12 @@ var GamePlayLayer = cc.Layer.extend({
   },
   addComponents() {
     this.addBackground();
-    this.addCircuitElements();
-    this.addStartButton();
+    this.addFeelings();
+    this.addDrag();
+  },
+  addDrag() {
+    this.drag = cc.Sprite.create(res.drag);
+    this.addChild(this.drag);
   },
   addStartButton() {
     this.start = cc.Sprite.create(res.start);
@@ -55,6 +59,21 @@ var GamePlayLayer = cc.Layer.extend({
       this
     );
   },
+  addFeelings() {
+    var assets = this.data.assets;
+    this.elements = [];
+    this.positions = [];
+    var x = -this.m_visibleSize.width / 2 + 600;
+    var y = -500;
+    for (var i = 0; i < assets.length; i++) {
+      var sprite = cc.Sprite.create(res[assets[i]]);
+      this.addChild(sprite);
+      this.elements.push(sprite);
+      sprite.setPosition(cc.p(x, y));
+      this.positions.push(cc.p(x, y));
+      x += sprite.width * 2;
+    }
+  },
   addCircuitElements() {
     var assets = this.data.assets;
     this.elements = [];
@@ -70,11 +89,6 @@ var GamePlayLayer = cc.Layer.extend({
   onTouchBegan(touch, event) {
     var self = event.getCurrentTarget();
     var Location = self.convertToNodeSpace(touch.getLocation());
-    var start = self.start.getBoundingBox();
-    if (cc.rectContainsPoint(start, Location)) {
-      self.startClicked();
-      return false;
-    }
     for (var i = 0; i < self.elements.length; i++) {
       var box = self.elements[i].getBoundingBox();
       if (cc.rectContainsPoint(box, Location)) {
@@ -102,12 +116,45 @@ var GamePlayLayer = cc.Layer.extend({
   },
   onTouchEnded(touch, event) {
     var self = event.getCurrentTarget();
+
+    if (self.selectedCategory != -1)
+      self.checkForCorrectRelease(touch);
     self.selectedCategory = -1;
   },
+  checkForCorrectRelease(touch) {
+    var pos = cc.p(0, 0);
+    var releasedLoc = this.convertToNodeSpace(touch.getLocation());
+    var distance = Math.abs(cc.pDistance(releasedLoc, pos));
+    if (distance <= 200)
+      this.setCategory(reqPos);
+    else
+      this.resetcategory(this.positions[this.selectedCategory]);
+  },
+  setCategory(pos) {
+    this.elements[this.selectedCategory].runAction(cc.sequence(
+      cc.moveTo(0.1, pos),
+      cc.callFunc(() => {
+        this.touchAllowed = true;
+        this.selectedCategory = -1;
+      }))
+    );
+  },
+  resetcategory(pos) {
+    this.elements[this.selectedCategory].runAction(cc.sequence(
+      cc.moveTo(0.3, pos),
+      cc.callFunc(() => {
+        this.touchAllowed = true;
+        this.selectedCategory = -1;
+      }))
+    );
+
+  },
   addBackground() {
-    this.backGround = cc.Sprite.create(res.bg);
+    this.backGround = cc.Sprite.create(res.modebg);
     this.addChild(this.backGround);
     this.backGround.setScaleX(this.m_visibleSize.width / this.backGround.width);
     this.backGround.setScaleY(this.m_visibleSize.height / this.backGround.height);
+    this.backGround1 = cc.Sprite.create(res.bg);
+    this.addChild(this.backGround1);
   },
 });

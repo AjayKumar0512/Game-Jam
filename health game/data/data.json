@@ -1,10 +1,10 @@
 [
   {
     "level_name": "Exploration",
-    "assets": ["battery", "bulb", "amplifier", "switch"]
+    "assets": ["angry", "sad", "cry", "happy"]
   },
   {
-    "level_name": "Compete",
-    "assets": ["battery", "bulb", "amplifier", "switch"]
+    "level_name": "Exploration",
+    "assets": ["angry", "sad", "cry", "happy"]
   }
 ]
