@@ -24,11 +24,19 @@ var ModeSelectionPage = cc.Layer.extend({
     this.addBackground();
     this.runAction(cc.sequence(cc.delayTime(0.5),
       cc.callFunc(() => {
+        window.gameManager.getVoAndPlay(res.hey);
         this.addTint();
         this.addOolzooPopUP();
+        this.addCross();
       })
     ));
 
+  },
+  addCross() {
+    this.cross = cc.Sprite.create(res.cross);
+    this.addChild(this.cross, 3);
+    this.cross.setScale(1.5);
+    this.cross.setPosition(-this.m_visibleSize.width / 2 + this.cross.width, this.m_visibleSize.height / 2 - this.cross.height);
   },
   addTint() {
     this.backTint = new cc.LayerColor(
@@ -56,8 +64,22 @@ var ModeSelectionPage = cc.Layer.extend({
       let popupBox = self.popup.getBoundingBox();
       if (cc.rectContainsPoint(popupBox, location)) {
         self.onPopUpClicked();
+        return true;
       }
     }
+    if (self.cross) {
+      let crossBox = self.cross.getBoundingBox();
+      if (cc.rectContainsPoint(crossBox, location)) {
+        self.onCrossClicked();
+        return true;
+      }
+    }
+  },
+  onCrossClicked() {
+    this.cross.removeFromParent();
+    this.backTint.removeFromParent();
+    this.popup.removeFromParent();
+    this.oolzoo.removeFromParent();
   },
   onPopUpClicked() {
     window.gameManager.startLevelNumber(1);

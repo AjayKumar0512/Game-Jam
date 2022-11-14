@@ -50,6 +50,9 @@
       cry: "res/retina/game_play/amplifier.png",
       happy: "res/retina/game_play/battery.png",
       drag: "res/retina/game_play/start.png",
+      hey: "res/sounds/mp3/hey.mp3",
+      angryy: "res/sounds/mp3/angry.mp3",
+      emotion: "res/sounds/mp3/emotion.mp3",
     },
   };
 

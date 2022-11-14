@@ -36,6 +36,12 @@ var GamePlayLayer = cc.Layer.extend({
     this.addFeelings();
     this.addDrag();
     this.addText();
+
+    this.runAction(cc.sequence(cc.delayTime(0.3),
+      cc.callFunc(() => {
+        window.gameManager.getVoAndPlay(res.emotion);
+      })
+    ))
   },
   addText() {
     var str = "Find your emotion";
@@ -144,6 +150,7 @@ var GamePlayLayer = cc.Layer.extend({
       this.resetcategory(this.positions[this.selectedCategory]);
   },
   setCategory(pos) {
+    window.gameManager.getVoAndPlay(res.angryy);
     this.selectedFeeling = this.elements[this.selectedCategory];
     this.elements[this.selectedCategory].runAction(cc.sequence(
       cc.moveTo(0.1, pos),
