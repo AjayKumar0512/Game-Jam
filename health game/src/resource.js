@@ -51,6 +51,7 @@
       happy: "res/retina/game_play/battery.png",
       drag: "res/retina/game_play/start.png",
       hey: "res/sounds/mp3/hey.mp3",
+      are: "res/sounds/mp3/are.mp3",
       angryy: "res/sounds/mp3/angry.mp3",
       emotion: "res/sounds/mp3/emotion.mp3",
       popup: "res/retina/popup/popup.png",
@@ -59,6 +60,7 @@
       next_icon: "res/retina/popup/next_icon.png",
       replay_icon: "res/retina/popup/replay_icon.png",
       welldone_poster: "res/retina/popup/welldone.png",
+      cancel: "res/retina/game_play/cancel.png",
     },
   };
 

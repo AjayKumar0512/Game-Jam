@@ -33,9 +33,8 @@ var ModeSelectionPage = cc.Layer.extend({
 
   },
   addCross() {
-    this.cross = cc.Sprite.create(res.cross);
+    this.cross = cc.Sprite.create(res.cancel);
     this.addChild(this.cross, 3);
-    this.cross.setScale(1.5);
     this.cross.setPosition(-this.m_visibleSize.width / 2 + this.cross.width, this.m_visibleSize.height / 2 - this.cross.height);
   },
   addTint() {
@@ -121,7 +120,7 @@ var ModeSelectionPage = cc.Layer.extend({
   },
 
   addText() {
-    var str = "Hey,Do You Want to \n     do Something    \n            new";
+    var str = "Hey,I have something \n        new for you.    \n         lets try this!";
     this.label = new cc.LabelTTF(
       str,
       getFontName(commonFonts.bookBagRegular),
@@ -131,6 +130,17 @@ var ModeSelectionPage = cc.Layer.extend({
     this.label.setColor(cc.color(0, 107, 138));
     this.label.setPosition(-this.m_visibleSize.width / 2 + this.popup.width * 1.5, this.popup.height * 2.5);
     this.addChild(this.label, 3);
+
+    var str = "Tap to proceed"
+    this.label1 = new cc.LabelTTF(
+      str,
+      getFontName(commonFonts.bookBagRegular),
+      getFontSize(30)
+    );
+
+    this.label1.setColor(cc.color(0, 107, 138));
+    this.label1.setPosition(-this.m_visibleSize.width / 2 + this.popup.width * 1.5, this.popup.height * 1.5);
+    this.addChild(this.label1, 3);
 
   },
   //add the given three modes on the mode selection page

@@ -21,7 +21,7 @@ var GamePlayLayer = cc.Layer.extend({
     this.scheduleUpdate();
     this.addComponents();
     this.counterTime = 0;
-    this.counterValue = 2;
+    this.counterValue = 10;
   },
   update(deltaTime) {
     this.runningTime += deltaTime;
@@ -37,16 +37,20 @@ var GamePlayLayer = cc.Layer.extend({
     }
   },
   NoClicked() {
-    this.popup.removeFromParent();
-    this.selectedFeeling.setVisible(true);
-    this.changeText("Dont worry!We got you");
-  },
-  YesClicked() {
+
     this.removeAllChildren();
     this.backGround = cc.Sprite.create(res.modebg);
     this.addChild(this.backGround);
     this.backGround.setScaleX(this.m_visibleSize.width / this.backGround.width);
     this.backGround.setScaleY(this.m_visibleSize.height / this.backGround.height);
+
+
+
+  },
+  YesClicked() {
+    this.popup.removeFromParent();
+    this.selectedFeeling.setVisible(true);
+    this.changeText("Dont worry!We got you");
   },
   timerEnds() {
     this.counter.removeFromParent();
@@ -54,7 +58,8 @@ var GamePlayLayer = cc.Layer.extend({
     this.popup = new ReplayPopUP(this);
     this.addChild(this.popup);
     this.selectedFeeling.setVisible(false);
-    this.changeText("Does this help?");
+    this.changeText("Are you still angry?");
+    window.gameManager.getVoAndPlay(res.are);
   },
   startSubLevel(data) {
     this.m_visibleSize = cc.director.getVisibleSize();
@@ -67,13 +72,19 @@ var GamePlayLayer = cc.Layer.extend({
     this.addBackground();
     this.addFeelings();
     this.addDrag();
-    this.addText("Find your emotion");
+    this.addCross();
+    this.addText("How are you feeling today?");
 
     this.runAction(cc.sequence(cc.delayTime(0.3),
       cc.callFunc(() => {
         window.gameManager.getVoAndPlay(res.emotion);
       })
     ))
+  },
+  addCross() {
+    this.cross = cc.Sprite.create(res.cancel);
+    this.addChild(this.cross);
+    this.cross.setPosition(this.m_visibleSize.width / 2 - this.cross.width * 1.5, this.m_visibleSize.height / 2 - this.cross.height * 1.3);
   },
   addText(text) {
     if (this.label)
@@ -93,11 +104,23 @@ var GamePlayLayer = cc.Layer.extend({
   addDrag() {
     this.drag = cc.Sprite.create(res.drag);
     this.addChild(this.drag);
+
+
+    this.labell = new cc.LabelTTF(
+      "Drag here",
+      getFontName(commonFonts.bookBagRegular),
+      getFontSize(30)
+    );
+
+    this.labell.setColor(cc.color(0, 107, 138));
+    this.addChild(this.labell);
   },
   addStartButton() {
     this.start = cc.Sprite.create(res.start);
     this.addChild(this.start);
     this.start.setPosition(cc.p(this.m_visibleSize.width / 2 - 200, 0));
+
+
   },
   //based on the song sequence it plays the corresponding tools by getting time info from data.json
   addTouchListener() {
@@ -117,7 +140,7 @@ var GamePlayLayer = cc.Layer.extend({
     var assets = this.data.assets;
     this.elements = [];
     this.positions = [];
-    var x = -this.m_visibleSize.width / 2 + 600;
+    var x = -this.m_visibleSize.width / 2 + 530;
     var y = -500;
     for (var i = 0; i < assets.length; i++) {
       var sprite = cc.Sprite.create(res[assets[i]]);
@@ -125,7 +148,7 @@ var GamePlayLayer = cc.Layer.extend({
       this.elements.push(sprite);
       sprite.setPosition(cc.p(x, y));
       this.positions.push(cc.p(x, y));
-      x += sprite.width * 2;
+      x += sprite.width * 1.5;
     }
   },
   addCircuitElements() {
@@ -143,6 +166,13 @@ var GamePlayLayer = cc.Layer.extend({
   onTouchBegan(touch, event) {
     var self = event.getCurrentTarget();
     var Location = self.convertToNodeSpace(touch.getLocation());
+    if (self.cross) {
+      let crossBox = self.cross.getBoundingBox();
+      if (cc.rectContainsPoint(crossBox, Location)) {
+        self.onCrossClicked();
+        return true;
+      }
+    }
     for (var i = 0; i < self.elements.length; i++) {
       var box = self.elements[i].getBoundingBox();
       if (cc.rectContainsPoint(box, Location)) {
@@ -152,6 +182,19 @@ var GamePlayLayer = cc.Layer.extend({
       }
 
     }
+
+  },
+  onCrossClicked() {
+    this.NoClicked();
+  },
+  addTint() {
+    this.backTint = new cc.LayerColor(
+      cc.color(28, 28, 28, 200),
+      this.m_visibleSize.width,
+      this.m_visibleSize.height
+    );
+    this.backTint.setPosition(-this.m_visibleSize.width / 2, -this.m_visibleSize.height / 2);
+    this.addChild(this.backTint);
   },
   startClicked() {
     var line = new cc.DrawNode.create();
@@ -195,7 +238,7 @@ var GamePlayLayer = cc.Layer.extend({
         for (var i = 0; i < this.elements.length; i++) {
           this.elements[i].removeFromParent();
         }
-        this.changeText("Dont worry!We got you");
+        this.changeText("lets count from 10 to 1");
         this.addCounter();
       }))
     );
@@ -235,6 +278,7 @@ var GamePlayLayer = cc.Layer.extend({
     this.addChild(this.backGround);
     this.backGround.setScaleX(this.m_visibleSize.width / this.backGround.width);
     this.backGround.setScaleY(this.m_visibleSize.height / this.backGround.height);
+    this.addTint();
     this.backGround1 = cc.Sprite.create(res.bg);
     this.addChild(this.backGround1);
   },
