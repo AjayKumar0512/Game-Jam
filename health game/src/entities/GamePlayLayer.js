@@ -20,9 +20,41 @@ var GamePlayLayer = cc.Layer.extend({
     this.hintManager = new HintManager(this);
     this.scheduleUpdate();
     this.addComponents();
+    this.counterTime = 0;
+    this.counterValue = 2;
   },
   update(deltaTime) {
     this.runningTime += deltaTime;
+    if (this.counter && this.counterValue != 0) {
+      this.counterTime += deltaTime;
+      if (this.counterTime >= 1) {
+        this.counterTime = 0;
+        this.counterValue -= 1;
+        this.counter.setString(this.counterValue.toString());
+        if (this.counterValue == 0)
+          this.timerEnds();
+      }
+    }
+  },
+  NoClicked() {
+    this.popup.removeFromParent();
+    this.selectedFeeling.setVisible(true);
+    this.changeText("Dont worry!We got you");
+  },
+  YesClicked() {
+    this.removeAllChildren();
+    this.backGround = cc.Sprite.create(res.modebg);
+    this.addChild(this.backGround);
+    this.backGround.setScaleX(this.m_visibleSize.width / this.backGround.width);
+    this.backGround.setScaleY(this.m_visibleSize.height / this.backGround.height);
+  },
+  timerEnds() {
+    this.counter.removeFromParent();
+    this.oolzoo.removeFromParent();
+    this.popup = new ReplayPopUP(this);
+    this.addChild(this.popup);
+    this.selectedFeeling.setVisible(false);
+    this.changeText("Does this help?");
   },
   startSubLevel(data) {
     this.m_visibleSize = cc.director.getVisibleSize();
@@ -35,7 +67,7 @@ var GamePlayLayer = cc.Layer.extend({
     this.addBackground();
     this.addFeelings();
     this.addDrag();
-    this.addText();
+    this.addText("Find your emotion");
 
     this.runAction(cc.sequence(cc.delayTime(0.3),
       cc.callFunc(() => {
@@ -43,8 +75,10 @@ var GamePlayLayer = cc.Layer.extend({
       })
     ))
   },
-  addText() {
-    var str = "Find your emotion";
+  addText(text) {
+    if (this.label)
+      return;
+    var str = text;
     this.label = new cc.LabelTTF(
       str,
       getFontName(commonFonts.bookBagRegular),
@@ -52,7 +86,7 @@ var GamePlayLayer = cc.Layer.extend({
     );
 
     this.label.setColor(cc.color(0, 107, 138));
-    this.label.setPosition(0, 300);
+    this.label.setPosition(0, 400);
     this.addChild(this.label, 3);
 
   },
@@ -161,8 +195,30 @@ var GamePlayLayer = cc.Layer.extend({
         for (var i = 0; i < this.elements.length; i++) {
           this.elements[i].removeFromParent();
         }
+        this.changeText("Dont worry!We got you");
+        this.addCounter();
       }))
     );
+  },
+  addCounter() {
+    var str = "10";
+    this.counter = new cc.LabelTTF(
+      str,
+      getFontName(commonFonts.bookBagRegular),
+      getFontSize(80)
+    );
+
+    this.counter.setColor(cc.color(0, 107, 138));
+    this.counter.setPosition(0, -300);
+    this.addChild(this.counter, 3);
+
+    this.oolzoo = new SpineUtils(res.oolzoo_json, res.oolzoo_atlas, 1);
+    this.oolzoo.setPosition(-200, -300);
+    this.addChild(this.oolzoo, 3);
+    this.oolzoo.setAnimation(0, "magician1", true);
+  },
+  changeText(text) {
+    this.label.setString(text);
   },
   resetcategory(pos) {
     this.elements[this.selectedCategory].runAction(cc.sequence(

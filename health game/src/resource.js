@@ -53,6 +53,12 @@
       hey: "res/sounds/mp3/hey.mp3",
       angryy: "res/sounds/mp3/angry.mp3",
       emotion: "res/sounds/mp3/emotion.mp3",
+      popup: "res/retina/popup/popup.png",
+      popup_back: "res/retina/popup/popup_back.png",
+      button1: "res/retina/popup/bttn01.png",
+      next_icon: "res/retina/popup/next_icon.png",
+      replay_icon: "res/retina/popup/replay_icon.png",
+      welldone_poster: "res/retina/popup/welldone.png",
     },
   };
 
