@@ -89,7 +89,8 @@ class GameManager {
           this.gameScene.topBar.hideBackButton();
         break;
       case GameConstants.PAGES.GAMEPLAYPAGE:
-        this.gameScene.topBar.showBackButton();
+        if (this.gameScene.topBar != null)
+          this.gameScene.topBar.showBackButton();
         break;
     }
     this.currentPage = page;

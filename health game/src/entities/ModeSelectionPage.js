@@ -15,13 +15,29 @@ var ModeSelectionPage = cc.Layer.extend({
     );
     this.isTouchAllowed = false;
     this.selectedIndex = 0;
+    this.addTouchListener();
     this.addComponents();
 
   },
   //adds required components to the mode selection page
   addComponents() {
     this.addBackground();
-    this.addModes();
+    this.runAction(cc.sequence(cc.delayTime(1),
+      cc.callFunc(() => {
+        this.addTint();
+        this.addOolzooPopUP();
+      })
+    ));
+
+  },
+  addTint() {
+    this.backTint = new cc.LayerColor(
+      cc.color(28, 28, 28, 200),
+      this.m_visibleSize.width,
+      this.m_visibleSize.height
+    );
+    this.backTint.setPosition(-this.m_visibleSize.width / 2, -this.m_visibleSize.height / 2);
+    this.addChild(this.backTint, GameConstants.MODESELECTIONPAGE.BACKGROUND);
   },
   addTouchListener() {
     cc.eventManager.addListener(
@@ -33,14 +49,18 @@ var ModeSelectionPage = cc.Layer.extend({
       this
     );
   },
-
   onTouchBegan(touch, event) {
     let self = event.getCurrentTarget();
     let location = self.convertToNodeSpace(touch.getLocation());
-    let nextBox = self.next.getBoundingBox();
-    if (cc.rectContainsPoint(nextBox, location)) {
-      self.onNextClicked();
+    if (self.popup) {
+      let popupBox = self.popup.getBoundingBox();
+      if (cc.rectContainsPoint(popupBox, location)) {
+        self.onPopUpClicked();
+      }
     }
+  },
+  onPopUpClicked() {
+    window.gameManager.startLevelNumber(1);
   },
   //add background to the mode slection page
   addBackground() {
@@ -52,6 +72,34 @@ var ModeSelectionPage = cc.Layer.extend({
       this.m_visibleSize.height / this.background.height
     );
     this.addChild(this.background, GameConstants.MODESELECTIONPAGE.BACKGROUND);
+  },
+  addOolzooPopUP() {
+    this.popup = new cc.Sprite(res.title);
+    this.addChild(this.popup, 3);
+    this.popup.setScale(1.5, 3);
+    this.popup.setPosition(-this.m_visibleSize.width / 2 - this.popup.width * 2, -this.m_visibleSize.height / 2 - this.popup.height * 2);
+    this.popup.runAction(cc.sequence(cc.moveTo(0.3, cc.p(-this.m_visibleSize.width / 2 + this.popup.width * 1.5, this.popup.height * 2.5)),
+      cc.callFunc(() => {
+        this.addText();
+
+
+      })
+    ));
+
+  },
+
+  addText() {
+    var str = "Hey,Do You Want to \n     do Something    \n            new";
+    this.label = new cc.LabelTTF(
+      str,
+      getFontName(commonFonts.bookBagRegular),
+      getFontSize(60)
+    );
+
+    this.label.setColor(cc.color(0, 107, 138));
+    this.label.setPosition(-this.m_visibleSize.width / 2 + this.popup.width * 1.5, this.popup.height * 2.5);
+    this.addChild(this.label, 3);
+
   },
   //add the given three modes on the mode selection page
   addModes() {
@@ -108,7 +156,7 @@ var ModeSelectionPage = cc.Layer.extend({
     this.runAction(
       cc.sequence(
         cc.callFunc(() => {
-          this.zoomInSelectedMode();
+          // this.zoomInSelectedMode();
         }),
         cc.delayTime(0.4),
         cc.callFunc(() => {

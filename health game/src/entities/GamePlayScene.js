@@ -9,7 +9,7 @@ var GamePlayScene = cc.Scene.extend({
 
   onEnter: function () {
     this._super();
-    this.addScoreScreen();
+    //this.addScoreScreen();
   },
 
   addScoreScreen: function () {
