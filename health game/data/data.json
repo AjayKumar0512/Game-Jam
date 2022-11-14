@@ -1,8 +1,10 @@
 [
   {
-    "level_name": "Exploration"
+    "level_name": "Exploration",
+    "assets": ["battery", "bulb", "amplifier", "switch"]
   },
   {
-    "level_name": "Compete"
+    "level_name": "Compete",
+    "assets": ["battery", "bulb", "amplifier", "switch"]
   }
 ]
