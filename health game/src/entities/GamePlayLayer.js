@@ -35,6 +35,20 @@ var GamePlayLayer = cc.Layer.extend({
     this.addBackground();
     this.addFeelings();
     this.addDrag();
+    this.addText();
+  },
+  addText() {
+    var str = "Find your emotion";
+    this.label = new cc.LabelTTF(
+      str,
+      getFontName(commonFonts.bookBagRegular),
+      getFontSize(80)
+    );
+
+    this.label.setColor(cc.color(0, 107, 138));
+    this.label.setPosition(0, 300);
+    this.addChild(this.label, 3);
+
   },
   addDrag() {
     this.drag = cc.Sprite.create(res.drag);
@@ -119,23 +133,27 @@ var GamePlayLayer = cc.Layer.extend({
 
     if (self.selectedCategory != -1)
       self.checkForCorrectRelease(touch);
-    self.selectedCategory = -1;
   },
   checkForCorrectRelease(touch) {
     var pos = cc.p(0, 0);
     var releasedLoc = this.convertToNodeSpace(touch.getLocation());
     var distance = Math.abs(cc.pDistance(releasedLoc, pos));
     if (distance <= 200)
-      this.setCategory(reqPos);
+      this.setCategory(pos);
     else
       this.resetcategory(this.positions[this.selectedCategory]);
   },
   setCategory(pos) {
+    this.selectedFeeling = this.elements[this.selectedCategory];
     this.elements[this.selectedCategory].runAction(cc.sequence(
       cc.moveTo(0.1, pos),
       cc.callFunc(() => {
         this.touchAllowed = true;
+        this.elements.splice(this.selectedCategory, 1);
         this.selectedCategory = -1;
+        for (var i = 0; i < this.elements.length; i++) {
+          this.elements[i].removeFromParent();
+        }
       }))
     );
   },
